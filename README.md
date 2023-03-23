@@ -1,7 +1,7 @@
-## Music Streaming Service
+# Music Streaming Service
 Welcome to our music streaming service built using ReactJS, CSS, Bootstrap, and Material UI. Our app allows users to access a vast collection of songs from different categories and albums. Artists can also log in and track metrics of how their songs are performing in terms of listens and earnings.
 
-# Features
+## Features
 
 1. Login page for both artists and users.
 
@@ -19,7 +19,7 @@ Welcome to our music streaming service built using ReactJS, CSS, Bootstrap, and 
 
 8. Users can leave comments on the song and artists can see them on their dashboard.
 
-# Technologies Used
+## Technologies Used
 Our app is built using the following technologies:
 
 1. ReactJS
@@ -30,7 +30,7 @@ Our app is built using the following technologies:
 
 4. Material UI
 
-# How to Use
+## How to Use
 To use our music streaming service, follow these steps:
 
 1. Open the app and land on the login page.
@@ -47,13 +47,13 @@ To use our music streaming service, follow these steps:
 
 7. New users are eligible for a 15-day free trial period, which is tracked using cookies.
 
-# Author 
+## Author 
 Paul Omondi 
 
-# Contact me 
+## Contact me 
 If you have any questions or concerns, please contact us at ochiengpaul001@gmail.com.
 
-# Licence 
-
+## Licence 
+git
 Moringa School 
 Flatiron School 
