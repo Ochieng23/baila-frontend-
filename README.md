@@ -1,71 +1,59 @@
-# Getting Started with Create React App
+## Music Streaming Service
+Welcome to our music streaming service built using ReactJS, CSS, Bootstrap, and Material UI. Our app allows users to access a vast collection of songs from different categories and albums. Artists can also log in and track metrics of how their songs are performing in terms of listens and earnings.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
 
-## Available Scripts
+1. Login page for both artists and users.
 
-In the project directory, you can run:
+2. Dashboard for artists to track their song metrics.
 
-### `npm start`
+3. Dashboard for users to listen to music from different categories and albums.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Search functionality based on category, album, artist or song name.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. Fisher Yates algorithm used to randomize songs.
 
-### `npm test`
+6. Click tracker algorithm to see user favorites based on the most clicked songs.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+7. Users can create playlists based on the click tracker algorithm.
 
-### `npm run build`
+8. Users can leave comments on the song and artists can see them on their dashboard.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Technologies Used
+Our app is built using the following technologies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. ReactJS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. CSS
 
-### `npm run eject`
+3. Bootstrap
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Material UI
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# How to Use
+To use our music streaming service, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Open the app and land on the login page.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Choose whether you're an artist or a user and log in.
 
-## Learn More
+3. Artists will be redirected to their dashboard, while users will be redirected to the user dashboard.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. From the user dashboard, users can listen to music from different categories and albums, search for songs by category, album, artist, or song name, and leave comments on songs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. The app uses the Fisher Yates algorithm to randomize songs, and the click tracker algorithm to suggest songs based on the most clicked songs.
 
-### Code Splitting
+6. Users can also create playlists based on the click tracker algorithm.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. New users are eligible for a 15-day free trial period, which is tracked using cookies.
 
-### Analyzing the Bundle Size
+# Author 
+Paul Omondi 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Contact me 
+If you have any questions or concerns, please contact us at ochiengpaul001@gmail.com.
 
-### Making a Progressive Web App
+# Licence 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# baila-frontend-
+Moringa School 
+Flatiron School 
