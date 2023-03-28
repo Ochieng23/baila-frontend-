@@ -54,6 +54,6 @@ Paul Omondi
 If you have any questions or concerns, please contact us at ochiengpaul001@gmail.com.
 
 ## Licence 
-git
 Moringa School 
+
 Flatiron School 
