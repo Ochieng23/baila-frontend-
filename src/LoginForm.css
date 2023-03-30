@@ -1,0 +1,78 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent black background */
+    z-index: 999; /* Make sure the overlay is on top of everything else */
+  }
+  
+  .login-form-container, .signup-form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Make sure the form is on top of the overlay */
+  }
+  
+  .login-form-container {
+    width: 400px;
+  }
+  
+  .signup-form-container {
+    width: 500px;
+  }
+  
+  .login-form-header, .signup-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .login-form-header h2, .signup-form-header h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .login-form-header button, .signup-form-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .login-form-body, .signup-form-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .login-form-body label, .signup-form-body label {
+    font-size: 18px;
+  }
+  
+  .login-form-body input, .signup-form-body input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .login-form-body button, .signup-form-body button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .login-form-body button:hover, .signup-form-body button:hover {
+    background-color: #005fa3;
+  }
+  

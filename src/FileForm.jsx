@@ -1,4 +1,4 @@
-import { AppContext } from "./App";
+import { AppContext } from "./Home";
 import React, { useContext } from "react";
 
 function submitToAPI(data, onSuccess, onError) {
