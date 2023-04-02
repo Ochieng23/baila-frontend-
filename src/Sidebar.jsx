@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css"
 import {
   FaTh,
   FaItunesNote,
@@ -18,7 +19,7 @@ function Sidebar({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/me")
+    fetch("https://baila-backend.onrender.com/me")
       .then((response) => {
         if (response.ok) {
           setLoggedIn(true);
@@ -26,7 +27,7 @@ function Sidebar({ children }) {
         }
       })
       .then((data) => {
-        setUser(data.name);
+        setUser(data);
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
@@ -36,7 +37,7 @@ function Sidebar({ children }) {
   const toggle = () => setIsOpen(!isOpen);
 
   const handleLogout = () => {
-    fetch("http://localhost:3000/logout", { method: "DELETE" }).then(
+    fetch("https://baila-backend.onrender.com/logout", { method: "DELETE" }).then(
       (response) => {
         if (response.ok) {
           setLoggedIn(false);
@@ -89,16 +90,17 @@ function Sidebar({ children }) {
       icon: <FaGripHorizontal />,
     },
     {
-      path: "/podcasts",
-      name: "Podcasts",
+      
+      name: user,
       icon: <FaGripHorizontal />,
     },
   ];
 
   return (
-    <div className="top">
+    <div className="top" >
       <div className="container">
-        <div className="sidebar">
+        <div className="row">
+        <div className="sidebar col-sm-12 col-md-6 col-lg-4" >
           <div className="top_section">
             <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
               BAILA
@@ -130,6 +132,7 @@ function Sidebar({ children }) {
         </div>
         <main>{children}</main>
       </div>
+    </div>
     </div>
   );
 }

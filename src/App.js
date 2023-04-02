@@ -18,7 +18,8 @@ import Account from './Account'
 function App() {
  
   return (
-    <div className='App' style={{backgroundColor:"black"}}>
+
+    <div className='App container' style={{backgroundColor:"black"}}>
      
     
     <Sidebar/>

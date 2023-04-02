@@ -4,7 +4,10 @@
   ;
 }
 
-
+img{
+  max-width: 100%;
+height: auto;
+}
 
 .latest-image {
   width: 300px;
@@ -34,6 +37,8 @@ main{
   color: #fff;
   height: 100vh;
   width: 200px;
+  right:0;
+  top:0;
   transition: all 0.5s;
   
 }
@@ -68,4 +73,35 @@ main{
 }
 .icon, .link_text{
   font-size: 20px;
+}
+
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  /* Styles for small screens */
+  /* .App{ overflow: hidden;} */
+  h3{font-size: 24PX;
+  line-height: 36px;}
+.container{padding: 0 2em;
+  width: 5px;
+  overflow: hidden;
+}
+ 
+  .App{width: 100vh; 
+    overflow-wrap: wrap;
+    overflow: hidden;
+  }
+  
+}
+
+/* Medium screens (between 576px and 992px) */
+@media (min-width: 600px) and (max-width: 992px) {
+  /* Styles for medium screens */
+  .container{width: 150px;}
+}
+
+/* Large screens (above 992px) */
+@media (min-width: 1200px) {
+  /* Styles for large screens */
+  .App{width: 90vw; flex-wrap: wrap;}
+  .App{ overflow: hidden;}
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import "./App.css"
 
 function SongList() {
   const [songs, setSongs] = useState([]);
@@ -19,7 +20,9 @@ function SongList() {
     filteredSongs.length > 0 ? [...filteredSongs].reverse() : [];
 
   return (
-    <div style={{ backgroundColor: "black" }}>
+     <div className="container">
+    <div className="row">
+    <div className="col-sm-12 col-md-6 col-lg-4"  style={{backgroundColor:"black", minWidth:"40vw"}}>
       <div>
         <Navbar search={search} setSearch={setSearch} />
       </div>
@@ -41,21 +44,23 @@ function SongList() {
               className="card-img-top img-fluid"
             />
             <div className="card-body">
-              <p
+              <h3
                 className="card-text "
                 style={{ color: "white", margin: "3px" }}
               >
                 {song.name}{" "}
-              </p>
+              </h3>
               <audio
                 src={song.audio_url}
                 controls
-                style={{ width: "200px", height: "" }}
+                style={{ width: "200px" }}
               />
             </div>
           </div>
         ))}
       </div>
+    </div>
+    </div>
     </div>
   );
 }

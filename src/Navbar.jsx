@@ -21,7 +21,7 @@ function Navbar({search,setSearch}) {
         <label htmlFor="searchInput"><FaSistrix /></label>
       </div>
       <div >
-        <img src='https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png' alt='img' style={{height:"7vh",marginRight:"20px", width:"300px"}}/>
+        <img className='img-fluid' src='https://www.freepnglogos.com/uploads/app-store-logo-png/google-play-and-apple-app-store-logos-22.png' alt='img' style={{height:"7vh",marginRight:"20px", width:"300px"}}/>
       </div>
     </div>
   );
