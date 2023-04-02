@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 function Trending() {
   return (
-    <div>Trending</div>
+    <div>
+      <Navbar/>
+    </div>
   )
 }
 

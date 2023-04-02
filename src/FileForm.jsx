@@ -1,67 +1,109 @@
-import { AppContext } from "./Home";
-import React, { useContext } from "react";
-
-function submitToAPI(data, onSuccess, onError) {
-  fetch("http://localhost:3000/songs", {
-    method: "POST",
-    body: data,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      onSuccess(data.image_url, data.audio_url);
-    })
-    .catch((error) => onError(error));
-}
+import React, { useState } from "react";
 
 function FileForm() {
-  const { latestPost, setLatestPost } = useContext(AppContext);
+  const [name, setName] = useState("");
+  const [length, setLength] = useState("");
+  const [albumId, setAlbumId] = useState("");
+  const [imageFile, setImageFile] = useState(null);
+  const [audioFile, setAudioFile] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
+
     const data = new FormData();
 
-    data.append("name", event.target.name.value);
-    data.append("length", event.target.length.value);
-    data.append("album_id", event.target.album_id.value);
-    data.append("image", event.target.image.files[0]);
-    data.append("audio", event.target.audio.files[0]);
+    data.append("name", name);
+    data.append("length", length);
+    data.append("album_id", albumId);
+    data.append("image", imageFile);
+    data.append("audio", audioFile);
 
-    submitToAPI(
-      data,
-      (imageUrl, audioUrl) => setLatestPost({ image_url: imageUrl, audio_url: audioUrl }),
-      (error) => console.error(error)
-    );
+    setIsLoading(true);
+
+    fetch("https://baila-backend.onrender.com/songs", {
+      method: "POST",
+      body: data,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
   }
 
   return (
-    <div>
-      <h1>File Form</h1>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" />
+    <div style={{border:"3px solid white"}}>
+      <h1 style={{ color: "white" }}>ADD SONG</h1>
+      <form onSubmit={handleSubmit} style={{margin:'5px'}}>
+        <label htmlFor="name" style={{ color: "white" }}>
+          Name:
+        </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
+        
+        <label htmlFor="length" style={{ color: "white", margin:"5px" }}>
+          Length:
+        </label>
+        <input
+          type="text"
+          name="length"
+          id="length"
+          value={length}
+          onChange={(e) => setLength(e.target.value)}
+        />
         <br />
 
-        <label htmlFor="length">Length</label>
-        <input type="text" name="length" id="length" />
+        <label htmlFor="album_id" style={{ color: "white" }}>
+          Album ID:
+        </label>
+        <input
+          type="text"
+          name="album_id"
+          id="album_id"
+          value={albumId}
+          onChange={(e) => setAlbumId(e.target.value)}
+        />
         <br />
 
-        <label htmlFor="album_id">Album ID</label>
-        <input type="text" name="album_id" id="album_id" />
+        <label htmlFor="image" style={{ color: "white" }}>
+          Image:
+        </label>
+        <input
+          type="file"
+          name="image"
+          id="image"
+          onChange={(e) => setImageFile(e.target.files[0])}
+        />
         <br />
 
-        <label htmlFor="image">Image</label>
-        <input type="file" name="image" id="image" />
+        <label htmlFor="audio" style={{ color: "white" }}>
+          Audio:
+        </label>
+        <input
+          type="file"
+          name="audio"
+          id="audio"
+          onChange={(e) => setAudioFile(e.target.files[0])}
+        />
         <br />
 
-        <label htmlFor="audio">Audio</label>
-        <input type="file" name="audio" id="audio" />
-        <br />
-
-        <button type="submit">Create Song</button>
+        <button className="btn btn-primary" type="submit" disabled={isLoading}>
+          {isLoading ? "Creating Song..." : "Create Song"}
+        </button>
       </form>
     </div>
   );
 }
 
 export default FileForm;
-

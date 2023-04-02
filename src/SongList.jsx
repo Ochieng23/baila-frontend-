@@ -1,34 +1,63 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 function SongList() {
   const [songs, setSongs] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3000/songs")
-      .then(res => res.json())
-      .then(data => setSongs(data))
-      .catch(error => console.error('Error fetching songs:', error));
+    fetch("https://baila-backend.onrender.com/home")
+      .then((res) => res.json())
+      .then((data) => (Array.isArray(data) ? setSongs(data) : setSongs([])))
+      .catch((error) => console.error("Error fetching songs:", error));
   }, []);
 
-  const reversedSongs = songs.length > 0 ? [...songs].reverse() : [];
+  const filteredSongs = songs.filter((song) =>
+    song.name.toLowerCase().includes(search.toLowerCase())
+  );
+  const reversedSongs =
+    filteredSongs.length > 0 ? [...filteredSongs].reverse() : [];
 
   return (
-    <div  style={{display: 'flex', flexWrap:"wrap", borderRadius:"1px", gap:"2px",margin:"10px"}}>
-      {reversedSongs.map(song => (
-        <div className="card" style={{width: "15rem"}}>
-          <img src={song.image_url} alt={song.name} style={{width:"200px", height:"190px"}}  className="card-img-top img-fluid" />
-          <div className="card-body">
-            <p className="card-text">{song.name}</p>
-            <audio src={song.audio_url} controls style={{width:"200px"}}/>
+    <div style={{ backgroundColor: "black" }}>
+      <div>
+        <Navbar search={search} setSearch={setSearch} />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          borderRadius: "5px",
+          gap: "2px",
+          margin: "10px",
+        }}
+      >
+        {reversedSongs.map((song) => (
+          <div className="card" style={{ width: "15rem" }}>
+            <img
+              src={song.image_url}
+              alt={song.name}
+              style={{ width: "200px", height: "190px" }}
+              className="card-img-top img-fluid"
+            />
+            <div className="card-body">
+              <p
+                className="card-text "
+                style={{ color: "white", margin: "3px" }}
+              >
+                {song.name}{" "}
+              </p>
+              <audio
+                src={song.audio_url}
+                controls
+                style={{ width: "200px", height: "" }}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
 
 export default SongList;
-
-
-
-

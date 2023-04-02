@@ -18,7 +18,8 @@ import Account from './Account'
 function App() {
  
   return (
-    <div className='App'>
+    <div className='App' style={{backgroundColor:"black"}}>
+     
     
     <Sidebar/>
     <Routes>

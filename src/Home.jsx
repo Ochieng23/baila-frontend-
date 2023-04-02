@@ -2,6 +2,7 @@ import React from 'react'
 import { createContext, useState } from "react";
 import FileForm from "./FileForm";
 import LatestImage from "./LatestImage";
+import Navbar from './Navbar';
 import SongList from './SongList';
 
 export const AppContext = createContext(null);
@@ -11,8 +12,7 @@ function Home() {
   return (
     <AppContext.Provider value={{ latestPost, setLatestPost }}>
     <div className="App">
-      {/* <FileForm />
-      <LatestImage /> */}
+     
       <SongList/>
     </div>
   </AppContext.Provider>

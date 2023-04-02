@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from "react";
-import { AppContext } from "./Home";
+import React, { useState, useEffect } from "react";
 
 function LatestImage() {
-  const { latestPost, setLatestPost } = useContext(AppContext);
+  const [latestPost, setLatestPost] = useState(null);
 
   useEffect(() => {
     const fetchLatestPost = async () => {
@@ -20,12 +19,16 @@ function LatestImage() {
         console.error(error);
       }
     };
-               
+
     fetchLatestPost();
-  }, [setLatestPost]);
+  }, []);
+
+  if (!latestPost) {
+    return <div>Loading latest post...</div>;
+  }
 
   return (
-    <div>
+    <div >
       <img src={latestPost.image_url} alt="latest post" className="latest-image" />
       <p>{latestPost.name}</p>
       <p>{latestPost.length}</p>
@@ -34,6 +37,5 @@ function LatestImage() {
     </div>
   );
 }
-
 
 export default LatestImage;
