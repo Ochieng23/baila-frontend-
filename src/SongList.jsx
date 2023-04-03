@@ -22,7 +22,7 @@ function SongList() {
   return (
      <div className="container">
     <div className="row">
-    <div className="col-sm-12 col-md-6 col-lg-4"  style={{backgroundColor:"black", minWidth:"40vw"}}>
+    <div className="col-sm-12 col-md-6 col-lg-4 "  style={{backgroundColor:"black", minWidth:"40vw"}}>
       <div>
         <Navbar search={search} setSearch={setSearch} />
       </div>
@@ -36,7 +36,7 @@ function SongList() {
         }}
       >
         {reversedSongs.map((song) => (
-          <div className="card" style={{ width: "15rem" }}>
+          <div className="card grow" style={{ width: "15rem" }}>
             <img
               src={song.image_url}
               alt={song.name}

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Genres() {
   return (
-    <div>Genres</div>
+    <div style={{color:"white"}}>To be deployed...</div>
   )
 }
 

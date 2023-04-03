@@ -44,6 +44,7 @@ function FileForm() {
           Name:
         </label>
         <input
+            style={{marginTop:"5px",width:"120px",borderRadius:"3px" }}
           type="text"
           name="name"
           id="name"
@@ -52,10 +53,11 @@ function FileForm() {
         />
         <br />
         
-        <label htmlFor="length" style={{ color: "white", margin:"5px" }}>
+        <label htmlFor="length" style={{ color: "white", marginTop:"10px" }}>
           Length:
         </label>
         <input
+        style={{marginTop:"5px",width:"120px",borderRadius:"3px" }}
           type="text"
           name="length"
           id="length"
@@ -68,6 +70,8 @@ function FileForm() {
           Album ID:
         </label>
         <input
+
+            style={{marginTop:"5px",width:"120px",borderRadius:"3px" }}
           type="text"
           name="album_id"
           id="album_id"
@@ -80,6 +84,7 @@ function FileForm() {
           Image:
         </label>
         <input
+            style={{marginTop:"5px",width:"120px",borderRadius:"3px" }}
           type="file"
           name="image"
           id="image"
@@ -91,6 +96,7 @@ function FileForm() {
           Audio:
         </label>
         <input
+            style={{marginTop:"5px",width:"120px",borderRadius:"3px" }}
           type="file"
           name="audio"
           id="audio"
@@ -98,7 +104,9 @@ function FileForm() {
         />
         <br />
 
-        <button className="btn btn-primary" type="submit" disabled={isLoading}>
+        <button 
+             style={{marginTop:"5px",width:"120px",borderRadius:"3px" }}
+        className="btn btn-primary" type="submit" disabled={isLoading}>
           {isLoading ? "Creating Song..." : "Create Song"}
         </button>
       </form>

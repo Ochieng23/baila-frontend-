@@ -1,36 +1,42 @@
 import React, { useState } from "react";
 import "./LoginForm.css";
 
-const LoginForm = ({  handleSignup }) => {
+const LoginForm = ({ handleSignup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState([]);
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:3000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    });
+    try {
+      const response = await fetch("https://baila-backend.onrender.com/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
-    if (response.ok) {
-      const user = await response.json();
-      // do something with the user data, e.g. store it in state
-      window.location.href = "/"; // redirect to home page
-    } else {
-      // handle error case
-      const error = await response.json();
-      console.log(error);
+      if (response.ok) {
+        const user = await response.json();
+        // do something with the user data, e.g. store it in state
+        window.location.href = "/"; // redirect to home page
+      } else {
+        // handle error case
+        const errorData = await response.json();
+        setErrors(errorData.errors || ["An unknown error occurred."]);
+      }
+    } catch (err) {
+      console.error("Error during login:", err);
+      setErrors(["An unknown error occurred."]);
     }
   };
 
-  const handleClose = () =>{
-    window.location.href = "/"
-  }
+  const handleClose = () => {
+    window.location.href = "/";
+  };
 
   return (
     <div className="overlay">
@@ -64,6 +70,13 @@ const LoginForm = ({  handleSignup }) => {
               <div className="signup-link-container">
                 <p>Don't have an account?</p>
                 <button onClick={handleSignup}>Sign up</button>
+                {errors.length > 0 && (
+                  <ul style={{ color: "red" }}>
+                    {errors.map((error, i) => (
+                      <p key={i}>{error}</p>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </div>

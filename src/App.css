@@ -26,7 +26,14 @@ height: auto;
 
 .container{
   display: flex;
+  
  
+}
+.grow{
+  transition: all .2s ease-in-out;
+}
+.grow:hover{
+  transform: scale(1.03);
 }
 main{
   width: 100%;
@@ -79,29 +86,27 @@ main{
 @media (max-width: 600px) {
   /* Styles for small screens */
   /* .App{ overflow: hidden;} */
-  h3{font-size: 24PX;
-  line-height: 36px;}
-.container{padding: 0 2em;
-  width: 5px;
-  overflow: hidden;
-}
- 
-  .App{width: 100vh; 
-    overflow-wrap: wrap;
-    overflow: hidden;
+  [class*="col-"] {
+    width: 100%;
   }
-  
+  .App{
+    overflow: wrap;
+  }
+  body {
+    background-color: lightblue;
+  }
 }
 
 /* Medium screens (between 576px and 992px) */
 @media (min-width: 600px) and (max-width: 992px) {
   /* Styles for medium screens */
-  .container{width: 150px;}
+ 
 }
 
 /* Large screens (above 992px) */
 @media (min-width: 1200px) {
   /* Styles for large screens */
-  .App{width: 90vw; flex-wrap: wrap;}
+ 
   .App{ overflow: hidden;}
 }
+

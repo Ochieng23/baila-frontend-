@@ -2,7 +2,7 @@ import React from 'react'
 
 function Podcasts() {
   return (
-    <div>Podcasts</div>
+    <div style={{color:"white"}}>Podcasts Coming Soon...</div>
   )
 }
 
