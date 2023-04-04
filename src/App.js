@@ -24,7 +24,7 @@ function App() {
   }, [playlistSongs]);
 
   return (
-    <div className="App" style={{backgroundColor:"black"}}>
+    <div className="App card-deck" style={{backgroundColor:"black"}}>
       <Sidebar />
       <Routes>
         <Route path="/" element={<Home />} />
