@@ -35,7 +35,7 @@ const LoginForm = ({ handleSignup }) => {
   };
 
   const handleClose = () => {
-    window.location.href = "/";
+    window.location.href = "/home";
   };
 
   return (

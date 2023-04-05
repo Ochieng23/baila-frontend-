@@ -27,7 +27,7 @@ function App() {
     <div className="App card-deck" style={{backgroundColor:"black"}}>
       <Sidebar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/latest" element={<Latest />} />
         <Route path="/artists" element={<Artist />} />

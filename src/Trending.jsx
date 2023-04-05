@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "./App.css"
+import "./App.css";
 
 function Trending() {
   const [trends, setTrends] = useState([]);
@@ -20,20 +20,15 @@ function Trending() {
 
     playlistSongs.push(trend);
     localStorage.setItem("playlists songs", JSON.stringify(playlistSongs));
-
-    console.log(playlistSongs);
   };
 
   return (
     <div>
       <h1>Trending</h1>
-      <div
-        className="row"
-        style={{ display: "flex", flexWrap: "wrap" }}
-      >
+      <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
         {trends.map((trend, index) => (
-          <div className="col-sm-12 col-md-6 col-lg-4" key={index}>
-            <div className="card grow" style={{ width: "15rem" }}>
+          <div className="col-sm-12 col-md-6 col-lg-4 card-deck" style={{borderRadius:"2px solid white"}} key={index}>
+            <div className="card grow" style={{ width: "15rem"}}>
               <Link to={`/playlist/${trend.id}`}>
                 <img
                   src={trend.image_url}
@@ -53,7 +48,18 @@ function Trending() {
                 />
                 <button
                   className="btn btn-primary grow"
-                  style={{ marginTop: "5px", borderRadius: "5px", backgroundColor: "lightblue", fontWeight: "bold" }}
+                  style={{
+                    background: "lightblue",
+                    color: "black",
+                    padding: "10px 20px",
+                    border: "none",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                    marginBottom: "2px",
+                    marginLeft: "40px",
+                    height:"30px"
+                           
+                  }}
                   onClick={() => handlePlaylist(trend)}
                 >
                   Add to Playlist
@@ -68,4 +74,3 @@ function Trending() {
 }
 
 export default Trending;
-

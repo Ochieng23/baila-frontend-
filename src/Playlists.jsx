@@ -1,5 +1,5 @@
-import {useState} from 'react'
-import React from 'react';
+import { useState } from "react";
+import React from "react";
 function Playlist() {
   const [songs, setSongs] = useState([]);
 
@@ -9,21 +9,23 @@ function Playlist() {
     localStorage.setItem("playlists songs", JSON.stringify(playlistSongs));
     setSongs(playlistSongs);
   };
-  
-  const playlistSongs = JSON.parse(localStorage.getItem("playlists songs")) || [];
+
+  const playlistSongs =
+    JSON.parse(localStorage.getItem("playlists songs")) || [];
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", flexDirection: "row" }}>
       <h1 style={{ color: "white" }}>......</h1>
-      <ul>
+      <div  style={{ display: "flex", flexWrap: "wrap", gap:"15px" }} >
         {playlistSongs &&
           playlistSongs.map((song, index) => (
-            <li key={index}>
-              <div className="card" style={{ width: "18rem" }}>
+            <div key={index}>
+              <div className="card" style={{ width: "250px",height:"auto", border:"2px solid white"}}>
                 <img
-                  className="card-img-top"
+                  className="card-img-top img-fluid"
                   src={song.image_url}
                   alt="Card image cap"
+                  style={{width:"250px", height:"180px"}}
                 />
                 <div className="card-body">
                   <h5 style={{ color: "white" }} className="card-title">
@@ -32,14 +34,25 @@ function Playlist() {
                   <audio
                     src={song.audio_url}
                     controls
-                    style={{ width: "200px" }}
+                    style={{ width: "250px" }}
                   />
-                  <button onClick={() => handleDelete(index)}>Remove</button>
+                  <button
+                  style={{
+                    background: "lightblue",
+                    color: "black",
+                    padding: "10px 20px",
+                    border: "none",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                    marginBottom: "3px",
+                    marginLeft:"80px"
+                  }}
+                   onClick={() => handleDelete(index)}>Remove</button>
                 </div>
               </div>
-            </li>
+            </div>
           ))}
-      </ul>
+      </div>
     </div>
   );
 }
