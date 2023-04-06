@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
+import {FaHeadphones} from "react-icons/fa"
 
 function Trending() {
   const [trends, setTrends] = useState([]);
@@ -38,7 +39,7 @@ function Trending() {
                 />
               </Link>
               <div className="card-body">
-                <p className="card-text" style={{ margin: "3px" }}>
+                <p className="card-text" style={{ margin: "3px", color:"white" }}>
                   {trend.name}
                 </p>
                 <audio
@@ -46,24 +47,32 @@ function Trending() {
                   controls
                   style={{ width: "200px", height: "" }}
                 />
+                <div style={{display:"flex",gap:"20px"}}>
+                  <div>
                 <button
                   className="btn btn-primary grow"
                   style={{
                     background: "lightblue",
                     color: "black",
-                    padding: "10px 20px",
+                    padding: "5px 10px",
                     border: "none",
                     borderRadius: "4px",
                     cursor: "pointer",
                     marginBottom: "2px",
-                    marginLeft: "40px",
-                    height:"30px"
+                    marginLeft: "10px",
+                    height:"30px",
+                    width:"110px"
                            
                   }}
                   onClick={() => handlePlaylist(trend)}
                 >
                   Add to Playlist
                 </button>
+                </div>
+                <div>
+                 <FaHeadphones style={{color:"white",height:"30px",width:"40px"}}/>
+                </div>
+                </div>
               </div>
             </div>
           </div>

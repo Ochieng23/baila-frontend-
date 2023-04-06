@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import Navbar from "./Navbar";
 function Playlist() {
   const [songs, setSongs] = useState([]);
 
@@ -14,6 +15,7 @@ function Playlist() {
     JSON.parse(localStorage.getItem("playlists songs")) || [];
 
   return (
+    <>
     <div style={{ display: "flex", flexDirection: "row",paddingLeft:"220px" }}>
       <h1 style={{ color: "white" }}>......</h1>
       <div  style={{ display: "flex", flexWrap: "wrap", gap:"15px" }} >
@@ -54,6 +56,7 @@ function Playlist() {
           ))}
       </div>
     </div>
+    </>
   );
 }
 
