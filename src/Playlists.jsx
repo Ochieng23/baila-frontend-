@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import Navbar from "./Navbar";
+import {FaHeadphones} from "react-icons/fa"
 function Playlist() {
   const [songs, setSongs] = useState([]);
 
@@ -31,7 +32,7 @@ function Playlist() {
                 />
                 <div className="card-body">
                   <h5 style={{ color: "white" }} className="card-title">
-                    {song.name}
+                  {<FaHeadphones style={{color:"white",height:"20px",width:"25px"}}/>}{song.name}
                   </h5>
                   <audio
                     src={song.audio_url}

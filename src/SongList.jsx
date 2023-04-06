@@ -76,7 +76,7 @@ function SongList() {
                 />
                 <div className="card-body">
                   <h3 className="card-text" style={{ color: "white", margin: "3px" }}>
-                {<FaHeadphones style={{color:"white",height:"20px",width:"25px"}}/>} {song.name}
+                {<FaHeadphones style={{color:"white",height:"20px",width:"25px"}}/>}{song.name}
                   </h3>
                   <audio
                     src={song.audio_url}

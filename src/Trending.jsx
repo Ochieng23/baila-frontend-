@@ -40,7 +40,7 @@ function Trending() {
               </Link>
               <div className="card-body">
                 <p className="card-text" style={{ margin: "3px", color:"white" }}>
-                  {trend.name}
+                {<FaHeadphones style={{color:"white",height:"20px",width:"25px"}}/>}{trend.name}
                 </p>
                 <audio
                   src={trend.audio_url}
@@ -69,9 +69,7 @@ function Trending() {
                   Add to Playlist
                 </button>
                 </div>
-                <div>
-                 <FaHeadphones style={{color:"white",height:"30px",width:"40px"}}/>
-                </div>
+               
                 </div>
               </div>
             </div>
