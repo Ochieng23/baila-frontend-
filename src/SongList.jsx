@@ -48,7 +48,7 @@ function SongList() {
       <div className="row">
         <div
           className="col-sm-12 col-md-6 col-lg-4"
-          style={{ backgroundColor: "black", minWidth: "70vw", gap: "15px" }}
+          style={{ backgroundColor: "black", minWidth: "60vw", gap: "10px", paddingLeft:"220px" }}
         >
           <Navbar search={search} setSearch={setSearch} />
           <div

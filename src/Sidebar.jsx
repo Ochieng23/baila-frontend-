@@ -99,8 +99,9 @@ function Sidebar({ children }) {
   return (
     <div className="top" >
       <div className="container">
-        <div className="row position-sticky">
-        <div className="sidebar  col-sm-12 col-md-6 col-lg-4 position-sticky" style={{ top: 0 }}>
+        <div className="row">
+        <div className="sidebar  col-sm-12 col-md-6 col-lg-4 " style={{ position: 'fixed', top: '0', left: '0', width:"200px",height:"100vh", backgroundColor:"#000",color:"#fff",transition:"all 0.5s" }}>
+
           <div className="top_section">
             <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
               BAILA

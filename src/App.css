@@ -33,13 +33,13 @@ height: auto;
   transition: all .2s ease-in-out;
 }
 .grow:hover{
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 main{
   width: 100%;
   padding: 20px;
 }
-.sidebar {
+/* .sidebar {
   position: sticky;
   top: 0;
   right: 0;
@@ -48,7 +48,7 @@ main{
   background-color: #000;
   color: #fff;
   transition: all 0.5s;
-}
+} */
 
 .top_section{
   display: flex;

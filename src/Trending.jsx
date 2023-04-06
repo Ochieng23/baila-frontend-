@@ -25,7 +25,7 @@ function Trending() {
   return (
     <div>
       <h1>Trending</h1>
-      <div className="row" style={{ display: "flex", flexWrap: "wrap" }}>
+      <div className="row" style={{ display: "flex", flexWrap: "wrap",paddingLeft:"220px" }}>
         {trends.map((trend, index) => (
           <div className="col-sm-12 col-md-6 col-lg-4 card-deck" style={{borderRadius:"2px solid white"}} key={index}>
             <div className="card grow" style={{ width: "15rem"}}>
